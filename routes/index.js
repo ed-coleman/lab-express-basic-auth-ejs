@@ -10,20 +10,4 @@ router.get("/", (req, res, next) => {
 
 
 
-
-  /*const body = { ...req.body }
-
-  const salt = bcrypt.genSaltSync(13)
-  const passwordHash = bcrypt.hashSync(body.password, salt)
-  console.log(passwordHash)
-  delete body.password
-  body.password = passwordHash
-
-  await User.create(body)
-  res.send(body)
-  console.log("post was delivered 🥷")
-})*/
-
-
-
 module.exports = router;

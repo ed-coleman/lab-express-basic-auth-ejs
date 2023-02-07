@@ -13,6 +13,7 @@ const express = require('express')
 
 const app = express()
 
+
 // ℹ️ This function is getting exported from the config folder. It runs most middlewares
 require('./config')(app)
 
@@ -28,6 +29,12 @@ app.use('/', index)
 
 const signup = require('./routes/auth')
 app.use('/', signup)
+
+const login = require('./routes/auth')
+app.use('/auth', login)
+
+const profile = require('/routes/auth')
+app.use('/auth', profile)
 
 /*const login = require('./routes/auth')
 app.use('/login', login)*/
