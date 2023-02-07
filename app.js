@@ -2,6 +2,8 @@
 // https://www.npmjs.com/package/dotenv
 require('dotenv/config')
 
+
+
 // ℹ️ Connects to the database
 require('./db')
 
@@ -24,9 +26,14 @@ app.locals.title = `${capitalized(projectName)}- Generated with Ironlauncher`
 const index = require('./routes/index')
 app.use('/', index)
 
-const signup = require('./routes/index')
-app.use('/signup', signup)
+const signup = require('./routes/auth')
+app.use('/', signup)
+
+/*const login = require('./routes/auth')
+app.use('/login', login)*/
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
 require('./error-handling')(app)
+
+require('./config/session.config')(app)
 
 module.exports = app
